@@ -1,9 +1,8 @@
-Instalação Inicial de pacotes python
-"""
+# **Instalação Inicial de pacotes python** 
 
 pip install pandas python-docx
 
-"""# **Anais da Mostra**"""
+# **Anais da Mostra**
 
 import pandas as pd
 from docx import Document
@@ -12,8 +11,8 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 from bs4 import BeautifulSoup
 
 # Caminhos dos arquivos
-file_path = '/content/drive/MyDrive/Anais/2023_Anais.xlsx'  # Caminho do arquivo Excel
-image_path = '/content/drive/MyDrive/Anais/logo.png'  # Caminho da imagem para o cabeçalho
+file_path = '/data/2023_Anais.xlsx'  # Caminho do arquivo Excel
+image_path = '/data/logo.png'  # Caminho da imagem para o cabeçalho
 
 # Função para carregar a planilha com tratamento de exceção
 def load_excel(file_path, sheet_name):
@@ -23,10 +22,10 @@ def load_excel(file_path, sheet_name):
         print(f"Erro ao carregar o arquivo Excel: {e}")
         return None
 
-sheet_name = 'BD_Mostra'  # Substitua pelo nome da aba desejada
+sheet_name1 = 'BD_Mostra'  # Substitua pelo nome da aba desejada
 
 # Carregar a planilha
-df = load_excel(file_path, sheet_name)
+df = load_excel(file_path, sheet_name1)
 if df is None:
     exit()  # Encerra o script se a planilha não puder ser carregada
 
@@ -185,34 +184,16 @@ for index, row in df.iterrows():
 
 # Salvar o documento gerado
 try:
-    doc.save('/content/drive/MyDrive/Anais/anais_formatado_mostra.docx')
+    doc.save('/outputs/anais_formatado_mostra.docx')
 except Exception as e:
     print(f"Erro ao salvar o documento: {e}")
 
-"""# **Anais da Congresso**"""
+# **Anais da Congresso**
 
-import pandas as pd
-from docx import Document
-from docx.shared import Pt, Inches
-from docx.enum.text import WD_ALIGN_PARAGRAPH
-from bs4 import BeautifulSoup
-
-# Caminhos dos arquivos
-file_path = '/content/drive/MyDrive/Anais/2023_Anais.xlsx'  # Caminho do arquivo Excel
-image_path = '/content/drive/MyDrive/Anais/logo.png'  # Caminho da imagem para o cabeçalho
-
-# Função para carregar a planilha com tratamento de exceção
-def load_excel(file_path, sheet_name):
-    try:
-        return pd.read_excel(file_path, sheet_name=sheet_name)
-    except Exception as e:
-        print(f"Erro ao carregar o arquivo Excel: {e}")
-        return None
-
-sheet_name = 'BD_Poster'  # Substitua pelo nome da aba desejada
+sheet_name2 = 'BD_Poster'  # Substitua pelo nome da aba desejada
 
 # Carregar a planilha
-df = load_excel(file_path, sheet_name)
+df = load_excel(file_path, sheet_name2)
 if df is None:
     exit()  # Encerra o script se a planilha não puder ser carregada
 
@@ -347,34 +328,16 @@ for index, row in df.iterrows():
 
 # Salvar o documento gerado
 try:
-    doc.save('/content/drive/MyDrive/Anais/anais_formatado_congresso.docx')
+    doc.save('/outputs/anais_formatado_congresso.docx')
 except Exception as e:
     print(f"Erro ao salvar o documento: {e}")
 
-"""# **Anais do Congresso Escolar**"""
+# **Anais do Congresso Escolar**
 
-import pandas as pd
-from docx import Document
-from docx.shared import Pt, Inches
-from docx.enum.text import WD_ALIGN_PARAGRAPH
-from bs4 import BeautifulSoup
-
-# Caminhos dos arquivos
-file_path = '/content/drive/MyDrive/Anais/2023_Anais.xlsx'  # Caminho do arquivo Excel
-image_path = '/content/drive/MyDrive/Anais/logo.png'  # Caminho da imagem para o cabeçalho
-
-# Função para carregar a planilha com tratamento de exceção
-def load_excel(file_path, sheet_name):
-    try:
-        return pd.read_excel(file_path, sheet_name=sheet_name)
-    except Exception as e:
-        print(f"Erro ao carregar o arquivo Excel: {e}")
-        return None
-
-sheet_name = 'BD_Connect'  # Substitua pelo nome da aba desejada
+sheet_name3 = 'BD_Connect'  # Substitua pelo nome da aba desejada
 
 # Carregar a planilha
-df = load_excel(file_path, sheet_name)
+df = load_excel(file_path, sheet_name3)
 if df is None:
     exit()  # Encerra o script se a planilha não puder ser carregada
 
@@ -515,6 +478,6 @@ for index, row in df.iterrows():
 
 # Salvar o documento gerado
 try:
-    doc.save('/content/drive/MyDrive/Anais/anais_formatado_escolar.docx')
+    doc.save('/outputs/anais_formatado_escolar.docx')
 except Exception as e:
     print(f"Erro ao salvar o documento: {e}")
