@@ -19,7 +19,7 @@ Instale as dependências com:
 Adicione o arquivo Excel e o logotipo no diretório data/.
 Execute o script:
 
-    python src/anais.py --input data/2023_Anais.xlsx --output outputs/anais_formatado.docx
+    python3 src/anais.py --input data/2023_Anais.xlsx
 
 O documento gerado será salvo na pasta outputs/.
 
