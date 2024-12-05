@@ -1,18 +1,13 @@
-# **Instalação Inicial de pacotes python** 
-
-pip install pandas python-docx
-
 # **Anais da Mostra**
-
 import pandas as pd
 from docx import Document
 from docx.shared import Pt, Inches
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from bs4 import BeautifulSoup
 
-# Caminhos dos arquivos
-file_path = '/data/2023_Anais.xlsx'  # Caminho do arquivo Excel
-image_path = '/data/logo.png'  # Caminho da imagem para o cabeçalho
+# Caminhos dos arquivos 
+file_path = 'data/2023_Anais.xlsx'  # Caminho do arquivo Excel
+image_path = 'data/logo.png'  # Caminho da imagem para o cabeçalho
 
 # Função para carregar a planilha com tratamento de exceção
 def load_excel(file_path, sheet_name):
@@ -184,7 +179,7 @@ for index, row in df.iterrows():
 
 # Salvar o documento gerado
 try:
-    doc.save('/outputs/anais_formatado_mostra.docx')
+    doc.save('outputs/anais_formatado_mostra.docx')
 except Exception as e:
     print(f"Erro ao salvar o documento: {e}")
 
@@ -328,7 +323,7 @@ for index, row in df.iterrows():
 
 # Salvar o documento gerado
 try:
-    doc.save('/outputs/anais_formatado_congresso.docx')
+    doc.save('outputs/anais_formatado_congresso.docx')
 except Exception as e:
     print(f"Erro ao salvar o documento: {e}")
 
@@ -478,6 +473,6 @@ for index, row in df.iterrows():
 
 # Salvar o documento gerado
 try:
-    doc.save('/outputs/anais_formatado_escolar.docx')
+    doc.save('outputs/anais_formatado_escolar.docx')
 except Exception as e:
     print(f"Erro ao salvar o documento: {e}")
