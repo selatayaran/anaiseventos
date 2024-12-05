@@ -7,9 +7,14 @@ Este projeto automatiza a criação dos anais de eventos científicos a partir d
     Python 3.7+
     Bibliotecas:
         pandas
+        openpyxl
         python-docx
         beautifulsoup4
 
+Na pasta anaiseventos crie um ambiente virtual com o comando:
+     python3 -m venv venv
+Ative o ambiente:
+    source venv/bin/activate
 Instale as dependências com:
 
     pip install -r requirements.txt
